@@ -97,9 +97,9 @@ public class RobotContainer {
         // Configure controls (drivebase suppliers, DriverStation triggers, Button and other Controller bindings)
         
         drive.acceptJoystickInputs(
-            () -> -driverController.getLeftY(),
-            () -> -driverController.getLeftX(),
-            () -> driverController.getRightX());
+            () -> driverController.getLeftY(),
+            () -> driverController.getLeftX(),
+            () -> -driverController.getRightX());
 
         drive.setDefaultCommand(Commands.run(
             () -> drive.setDriveEnum(DriveState.TELEOP), drive));
