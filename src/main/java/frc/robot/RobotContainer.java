@@ -102,7 +102,7 @@ public class RobotContainer {
             () -> -driverController.getRightX());
 
         drive.setDefaultCommand(Commands.run(
-            () -> drive.setDriveEnum(DriveState.TELEOP), drive));
+            () -> drive.setDriveEnum(DriveState.TELEOP)                                                     , drive));
         
         configureStateTriggers();
         configureButtonBindings();

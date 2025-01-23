@@ -44,7 +44,7 @@ public class DriveConstants {
       11, 
       21, 
       31, 
-      Rotation2d.fromRotations(0.065674));
+      Rotation2d.fromRotations(0.073242));
     
     public static final SwerveModuleHardwareConfig kFrontRight = new SwerveModuleHardwareConfig(
       "FrontRight", 

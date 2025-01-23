@@ -3,6 +3,7 @@ package frc.robot;
 import org.littletonrobotics.junction.AutoLogOutput;
 
 import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.path.PathPlannerPath;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -37,10 +38,21 @@ public class AutonCommands {
 
         /* Example:
         autoChooser.setDefaultOption("SpeakerShot", runDefaultCommand());
+        
 
         autoChooser.addOption("S2C3-5piece", runS2C35Piece());
         */
+    
+// return AutoBuilder.followPath(PathPlannerPath.fromPathFile("Test Path"));
 
+/*public Command PL_MB() {
+    return new SequentialCommandGroup(
+        PL(), AutoBuilder.followPath(PathPlannerPath.fromPathFile("Shoot1-Note1")));
+  } */
+    }
+    public Command straightAuto() {
+        // return AutoBuilder.followPath(PathPlannerPath.fromPathFile("Straight_Auto"));
+        return null;
     }
 
     public SendableChooser<Command> getAutoChooser() {
