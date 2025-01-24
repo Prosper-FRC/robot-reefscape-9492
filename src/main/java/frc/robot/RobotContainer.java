@@ -77,7 +77,7 @@ public class RobotContainer {
         // ex: LEDs = new LEDSubsystem();
 
         // Instantiate your TeleopCommands and AutonCommands classes
-        telopCommands = new TeleopCommands(/* pass subsystems here */);
+        telopCommands = new TeleopCommands();
         autonCommands = new AutonCommands(drive);
         try {
             autoChooser = new LoggedDashboardChooser<>("Auton Program", autonCommands.getAutoChooser());
@@ -116,6 +116,8 @@ public class RobotContainer {
     }
 
     public Command getAutonomousCommand() {
+        Commands.runOnce(() -> {drive.setDriveEnum(DriveState.AUTON);}, drive).schedule();
+
         return autoChooser.get();
     }
 
