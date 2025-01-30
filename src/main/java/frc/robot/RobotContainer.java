@@ -121,7 +121,9 @@ public class RobotContainer {
         return autoChooser.get();
     }
 
-    private void configureStateTriggers() {}
+    private void configureStateTriggers() {
+        new Trigger(DriverStation::isEnabled).onTrue(Commands.runOnce(() -> {drive.resetAllEncoders();}));
+    }
 
     private void configureButtonBindings() {
         driverController.x().onTrue(Commands.runOnce(() -> {drive.resetGyro();}));
