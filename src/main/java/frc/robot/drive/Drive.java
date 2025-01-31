@@ -58,7 +58,8 @@ public class Drive extends SubsystemBase{
         SNIPER_LEFT,
         DRIFT_TEST,
         STOP,
-        RIGHT_DEG
+        RIGHT_DEG,
+        
     }
 
     private Module[] modules; 
@@ -202,8 +203,10 @@ public class Drive extends SubsystemBase{
                 break;
 
             case DRIFT_TEST:
-                desiredSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(new ChassisSpeeds(kTranslationSpeed.get(), 0, Math.toRadians(kOmegaSpeed.get())), getRobotRotation());
+                // desiredSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(new ChassisSpeeds(kTranslationSpeed.get(), 0, Math.toRadians(kOmegaSpeed.get())), getRobotRotation());
+                desiredSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(new ChassisSpeeds(-kTranslationSpeed.get(), 0, 0), getRobotRotation());
                 break;
+            
 
             case AUTON:
                 desiredSpeeds = new ChassisSpeeds(
