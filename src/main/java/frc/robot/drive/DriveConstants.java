@@ -36,6 +36,9 @@ public class DriveConstants {
     
     public static final SwerveDriveKinematics kKinematics = new SwerveDriveKinematics(kModuleTranslations);
 
+    // Pathplanner PID gains
+
+
     // TODO: Needs to be tuned //
     public static final double kDriftRate = RobotBase.isReal() ? 1 : 3.0;
 
